@@ -1,5 +1,5 @@
 # vue-weather-forecast-brazil
-O vue-weather-forecast-brazil consulta APIs do INMET ( Instituto Nacional de Meteorologia) e IBGE (Instituto Brasileiro de Geografia e Estatistica) para fornecer a previsão do tempo dos municípios brasileiros. Acesse o [link](https://vue-weather-forecast-brazil-almfelipe.vercel.app/) e confira a demonstração.
+O vue-weather-forecast-brazil consulta APIs do INMET ( Instituto Nacional de Meteorologia) e IBGE (Instituto Brasileiro de Geografia e Estatistica) para fornecer a previsão do tempo dos municípios brasileiros. Acesse o [link](https://vue-weather-forecast-brazil-almfelipe.vercel.app/) e confira a demonstração de produção ou acesse o [link](vue-weather-forecast-brazil-git-main-almfelipe.vercel.app) e confira a versão de desenvolvimento.
 
 ## Project setup
 ```
