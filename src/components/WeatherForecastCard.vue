@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div v-if="weatherForecastData">
         <div class="card" >
             <div class="card-body">
                 <h5 class="card-title text-left">{{weatherForecastDates[0] | momentFullDayOfWeek }}</h5>
@@ -52,12 +52,9 @@
 import moment from 'moment'
 
 export default {
-    props: {
-        weatherForecast: Object,
-    },
     data() {
         return {
-            weatherForecastData: this.weatherForecast,
+            weatherForecastData: null,
             dayShift : ["Morning", "Afternoon", "Night"]
         }
     },
