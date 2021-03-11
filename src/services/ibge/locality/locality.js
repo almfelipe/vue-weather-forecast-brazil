@@ -4,7 +4,7 @@ export default{
     states:() => {
         return http.get('estados')
     },
-    cities:(idState) => {
-        return http.get('estados/' + idState + '/municipios')
+    cities:(stateAcronym) => {
+        return http.get('estados/' + stateAcronym + '/municipios')
     }
 }
