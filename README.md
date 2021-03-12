@@ -1,7 +1,15 @@
-# vue-weather-forecast-brazil
+# About vue-weather-forecast-brazil
 Vue-weather-forecast-brazil consults APIs from INMET (National Institute of Meteorology) and IBGE (Brazilian Institute of Geography and Statistics) to provide weather forecasts for Brazilian cities. Go to [link](https://vue-weather-forecast-brazil-almfelipe.vercel.app/) and check out the production live demo or go to [link](https://vue-weather-forecast-brazil-git-main-almfelipe.vercel.app/) and check out the development version.
 
-## Project setup
+### Built with
+* [Vue.js](https://vuejs.org/)
+* [Bootstrap](https://getbootstrap.com/)
+
+## Getting started
+
+To get a local copy up and running follow these simple steps.
+
+### Prerequisites
 
 Make sure you have a recent version of Node.js installed in your development environment.
 
@@ -32,3 +40,8 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+## Acknowledgements
+
+* [axios](https://github.com/axios/axios)
+* [vuejs-loading-screen](https://www.npmjs.com/package/vuejs-loading-screen)
