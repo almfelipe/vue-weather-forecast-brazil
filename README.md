@@ -5,7 +5,7 @@ Vue-weather-forecast-brazil consults APIs from INMET (National Institute of Mete
 
 Make sure you have a recent version of Node.js installed in your development environment.
 
-### Clone the Repository
+### Clone the repository
 ```
 git clone https://github.com/almfelipe/vue-weather-forecast-brazil.git
 ```
