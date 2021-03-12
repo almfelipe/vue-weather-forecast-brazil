@@ -1,7 +1,7 @@
 <template>
     <div v-if="weatherForecastData">
-        <div class="card" >
-            <div class="card-body">
+        <div class="card mb-4" >
+            <div class="card-body pb-0">
                 <h5 class="card-title text-left">{{weatherForecastDates[0] | momentFullDayOfWeek }}</h5>
                 <h6 class="card-subtitle text-left mb-4 text-muted">{{weatherForecastDates[0] | momentFullDate}}, {{cityName}} - {{stateName}}</h6>
                 <div class="row mb-4">

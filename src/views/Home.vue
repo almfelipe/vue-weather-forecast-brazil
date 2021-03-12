@@ -1,11 +1,9 @@
 <template>
   <div class="container">
 
-      <div class="about">
-        <h1>vue-weather-forecast-brazil</h1>
-      </div>
-
-      <div v-if="isStatesLoaded" class="form-group">
+      <h3>vue-weather-forecast-brazil</h3>
+      
+      <div v-if="isStatesLoaded"> 
         <label>State</label>
         <select v-model="state.sigla" class="form-control form-control-sm">
           <option v-for="curState in states" :key="curState.sigla" v-bind:value="curState.sigla">
@@ -13,7 +11,8 @@
           </option>
         </select>
       </div>
-      <div v-if="isCitiesLoaded" class="form-group">
+
+      <div v-if="isCitiesLoaded">
         <label>City</label>
         <select v-model="city.id" class="form-control form-control-sm">
           <option v-for="curCity in cities" :key="curCity.id" v-bind:value="curCity.id">
@@ -21,8 +20,9 @@
           </option>
         </select>
       </div>
-    <hr/>
-    <WeatherForecastCard ref="weatherForecastCard"/>
+      <hr/>
+      <WeatherForecastCard ref="weatherForecastCard"/>
+
   </div>
 </template>
 
