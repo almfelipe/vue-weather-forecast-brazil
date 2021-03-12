@@ -1,5 +1,5 @@
 # vue-weather-forecast-brazil
-Vue-weather-forecast-brazil consults APIs from INMET (National Institute of Meteorology) and IBGE (Brazilian Institute of Geography and Statistics) to provide weather forecasts for Brazilian cities. Go to [link] (https://vue-weather-forecast-brazil-almfelipe.vercel.app/) and check out the production live demo or go to [link] (https: // vue-weather-forecast-brazil- git-main-almfelipe.vercel.app/) and check out the development version.
+Vue-weather-forecast-brazil consults APIs from INMET (National Institute of Meteorology) and IBGE (Brazilian Institute of Geography and Statistics) to provide weather forecasts for Brazilian cities. Go to [link](https://vue-weather-forecast-brazil-almfelipe.vercel.app/) and check out the production live demo or go to [link](https: // vue-weather-forecast-brazil- git-main-almfelipe.vercel.app/) and check out the development version.
 
 ## Project setup
 
