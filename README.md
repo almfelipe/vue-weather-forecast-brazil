@@ -1,7 +1,16 @@
 # vue-weather-forecast-brazil
-O vue-weather-forecast-brazil consulta APIs do INMET ( Instituto Nacional de Meteorologia) e IBGE (Instituto Brasileiro de Geografia e Estatistica) para fornecer a previsão do tempo dos municípios brasileiros. Acesse o [link](https://vue-weather-forecast-brazil-almfelipe.vercel.app/) e confira a demonstração de produção ou acesse o [link](https://vue-weather-forecast-brazil-git-main-almfelipe.vercel.app/) e confira a versão de desenvolvimento.
+Vue-weather-forecast-brazil consults APIs from INMET (National Institute of Meteorology) and IBGE (Brazilian Institute of Geography and Statistics) to provide weather forecasts for Brazilian cities. Go to [link] (https://vue-weather-forecast-brazil-almfelipe.vercel.app/) and check out the production live demo or go to [link] (https: // vue-weather-forecast-brazil- git-main-almfelipe.vercel.app/) and check out the development version.
 
 ## Project setup
+
+Make sure you have a recent version of Node.js installed in your development environment.
+
+### Clone the Repository
+```
+git clone https://github.com/almfelipe/vue-weather-forecast-brazil.git
+```
+
+### Install all dependencies
 ```
 npm install
 ```
