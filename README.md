@@ -45,5 +45,5 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 * [axios](https://github.com/axios/axios)
 * [vuejs-loading-screen](https://www.npmjs.com/package/vuejs-loading-screen)
-* [Inmet weather forecast API](https://portal.inmet.gov.br/manual/manual-de-uso-da-api-de-previs%C3%A3o)
+* [INMET weather forecast API](https://portal.inmet.gov.br/manual/manual-de-uso-da-api-de-previs%C3%A3o)
 * [IBGE locality API](https://servicodados.ibge.gov.br/api/docs/localidades)
