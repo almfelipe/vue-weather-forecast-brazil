@@ -30,6 +30,7 @@
 
 import IbgeLocalityAPI from '@/services/ibge/locality/locality'
 import InmeWeatherForecastAPI from '@/services/inmet/weatherForecast/weatherForecast'
+import BrazilGeographicAPI from '@/services/almfelipe/brazilgeographic/brazilgeographic'
 import WeatherForecastCard from '@/components/WeatherForecastCard'
 
 export default {
@@ -42,7 +43,8 @@ export default {
       cities: [],
       weatherForecastData: null,
       state: {sigla: null},
-      city: {id: null}
+      city: {id: null},
+      reversegeocode: null,
     }
   },
   computed: {
@@ -56,6 +58,42 @@ export default {
   methods:{
     updateWeatherForecastCard(){
       this.$refs.weatherForecastCard.weatherForecastData = this.weatherForecastData
+    },
+    geolocationSuccess(position){
+      let latitude  = position.coords.latitude
+      let longitude = position.coords.longitude
+      BrazilGeographicAPI.reversegeocode(latitude,longitude).then(response => {
+        this.reversegeocode = response.data.reversegeocode
+        this.loadStateCityData()
+      }).catch( () => {
+        this.reversegeocode = null
+        this.loadStateCityData()
+      })
+    },
+    loadStateCityData(){
+      IbgeLocalityAPI.states().then(response => {
+        this.states = response.data
+        if (this.reversegeocode){
+          this.state.sigla = this.reversegeocode.state_initials
+        }else{
+          this.state.sigla = this.states[0].sigla
+        }
+        IbgeLocalityAPI.cities(this.state.sigla).then(response => {
+            this.cities = response.data
+            if (this.reversegeocode){
+              this.city.id = this.reversegeocode.city_id
+            }else{
+              this.city.id = this.cities[0].id
+            }
+            InmeWeatherForecastAPI.weatherForecast(this.city.id).then(response => {
+              this.weatherForecastData = response.data
+              this.updateWeatherForecastCard();
+              this.$isLoading(false)
+            })
+        })
+      }).catch( () => {
+          this.$isLoading(false)
+      })
     }
   },
   watch: {
@@ -66,8 +104,7 @@ export default {
             this.cities = response.data
             this.city.id = this.cities[0].id
             this.$isLoading(false)
-          }).catch(e => {
-              console.log(e)
+          }).catch( () => {
               this.$isLoading(false)
           })
         }
@@ -79,8 +116,7 @@ export default {
               this.weatherForecastData = response.data
               this.updateWeatherForecastCard()
               this.$isLoading(false)
-            }).catch(e => {
-                console.log(e)
+            }).catch( () => {
                 this.$isLoading(false)
             })
         }
@@ -88,22 +124,11 @@ export default {
   },  
   mounted() {
     this.$isLoading(true)
-    IbgeLocalityAPI.states().then(response => {
-        this.states = response.data
-        this.state.sigla = this.states[0].sigla
-        IbgeLocalityAPI.cities(this.state.sigla).then(response => {
-            this.cities = response.data
-            this.city.id = this.cities[0].id
-            InmeWeatherForecastAPI.weatherForecast(this.city.id).then(response => {
-              this.weatherForecastData = response.data
-              this.updateWeatherForecastCard();
-              this.$isLoading(false)
-            })
-        })
-    }).catch(e => {
-        console.log(e)
-        this.$isLoading(false)
-    })
+    if (navigator.geolocation){
+      navigator.geolocation.getCurrentPosition(this.geolocationSuccess,this.loadStateCityData)
+    } else {
+      this.loadStateCityData()
+    }
   },
 }
 </script>
