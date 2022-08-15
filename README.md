@@ -11,7 +11,7 @@ To get a local copy up and running follow these simple steps.
 
 ### Prerequisites
 
-Make sure you have a recent version of Node.js installed in your development environment.
+Make sure you have a recent version of [Node.js](https://nodejs.org/) installed in your development environment.
 
 ### Clone the repository
 ```
